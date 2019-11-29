@@ -34,6 +34,7 @@ class LibLoConan(ConanFile):
     def package(self):
         self.copy(pattern="LICENSE", dst="licenses", src=self._source_subfolder)
         self.copy(pattern="lo/*.h", dst="include", src=self._source_subfolder)
+        self.copy(pattern="lo/*.h", dst="include", src=self._build_subfolder)
         self.copy(pattern="*.dll", dst="bin", keep_path=False)
         self.copy(pattern="*.lib", dst="lib", keep_path=False)
         self.copy(pattern="*.a", dst="lib", keep_path=False)
